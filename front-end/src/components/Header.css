@@ -1,0 +1,44 @@
+.header-container {
+    height: 80px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px;
+    background: #381588;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header-container ul {
+    padding-left: 30px;
+    font-size: 18px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header-container ul li {
+    display: inline-block;
+    font-weight: 600;
+    height: 100%;
+    cursor: pointer;
+}
+
+.header-container ul li a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.header-container ul li:hover:not(.logo), .header-container ul li:hover:not(.logo) a {
+    /* background: #2e1074; */
+    color: #381588;
+    background: white;
+}
+
+.header-container ul li.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
