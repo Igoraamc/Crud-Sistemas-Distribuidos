@@ -13,28 +13,28 @@ export default function Header(props) {
         <div className="header-container">
             <ul>
                 <li className="logo">
-                    <Link to="">
+                    <Link to="/">
                         <div>                        
                             K 2.0
                         </div>
                     </Link>
                 </li>
                 <li>
-                    <Link to="">
+                    <Link to="/">
                         <div>                        
                             Sign In
                         </div>
                     </Link>
                 </li>
                 <li>
-                    <Link to="signup">
+                    <Link to="/signup">
                         <div>                        
                             Sign Out
                         </div>
                     </Link>
                 </li>
                 <li>
-                    <Link to="users-list">
+                    <Link to="/users-list">
                         <div>                        
                             Users List
                         </div>

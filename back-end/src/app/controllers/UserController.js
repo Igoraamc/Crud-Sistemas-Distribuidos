@@ -42,6 +42,17 @@ class UserController {
 
         return res.json(users);
     }
+
+    async index(req, res) {
+        const { id } = req.params;
+
+        const user = await User.findOne({
+            where: { id },
+            attributes: ['id', 'name', 'email']
+        });
+
+        return res.json(user);
+    }
 }
 
 export default new UserController();

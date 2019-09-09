@@ -1,3 +1,24 @@
-.mg-tp {
-    margin-top: 80px;
+.userslist-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userslist-container table {
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+.userslist-container tbody tr:nth-child(odd) {
+    background-color: #c5c5c5;
+}
+
+.userslist-container th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+.userslist-container a {
+    color: rgb(0, 129, 129);
 }
