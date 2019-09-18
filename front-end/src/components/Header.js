@@ -20,16 +20,9 @@ export default function Header(props) {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">
+                    <Link to="/register">
                         <div>                        
-                            Sign In
-                        </div>
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/signup">
-                        <div>                        
-                            Sign Out
+                            Register
                         </div>
                     </Link>
                 </li>

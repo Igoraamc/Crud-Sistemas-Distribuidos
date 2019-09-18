@@ -15,7 +15,11 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      password_hash: {
+      phone: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      address: {
         type: Sequelize.STRING,
         allowNull: false
       },

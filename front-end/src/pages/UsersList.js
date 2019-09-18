@@ -30,6 +30,8 @@ export default function UsersList() {
                             <th> ID </th>
                             <th> Name </th>
                             <th> Email </th>
+                            <th> Phone </th>
+                            <th> Address </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,10 +41,15 @@ export default function UsersList() {
                                     <td>{ user.id }</td>
                                     <td>{ user.name }</td>
                                     <td>{ user.email }</td>
+                                    <td>{ user.phone }</td>
+                                    <td>{ user.address }</td>
                                     <td>
                                         <Link to={`user/${user.id}`}>
                                             Update
                                         </Link>
+                                    </td>
+                                    <td>
+                                        <span>Delete</span>
                                     </td>
                                 </tr>
                             );
