@@ -22,3 +22,9 @@
 .userslist-container a {
     color: rgb(0, 129, 129);
 }
+
+.userslist-container span {
+    color: rgb(0, 129, 129);
+    text-decoration: underline;
+    cursor: pointer;
+}

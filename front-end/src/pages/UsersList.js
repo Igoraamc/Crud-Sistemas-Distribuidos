@@ -15,10 +15,16 @@ export default function UsersList() {
     }, []);
 
     async function getListUsers() {
-        const list = await api.get('/users');        
+        const list = await api.get('/users');
 
         setUsers(list.data);
     };
+
+    async function deleteUser(id) {
+        await api.delete(`/user/${id}`);
+
+        getListUsers();
+    }
 
     return (
         <section className="mg-tp">
@@ -49,7 +55,7 @@ export default function UsersList() {
                                         </Link>
                                     </td>
                                     <td>
-                                        <span>Delete</span>
+                                        <span onClick={ _ => deleteUser(user.id)} >Delete</span>
                                     </td>
                                 </tr>
                             );

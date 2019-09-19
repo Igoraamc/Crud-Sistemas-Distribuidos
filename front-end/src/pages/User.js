@@ -7,14 +7,7 @@ import Header from '../components/Header';
 import './User.css';
 
 export default function User({ match, history }) {
-
-    const [user, setUser] = useState({
-        id: 0,
-        name: '',
-        email: '',
-        phone: '',
-        addresss: '',
-    });
+    const [id, setId] = useState(0);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -23,15 +16,22 @@ export default function User({ match, history }) {
     useEffect(() => {
         getUserData();
 
-    }, [match.params.id]);
+    }, []);
 
     async function getUserData() {
         const id = match.params.id;
 
         const response = await api.get(`user/${id}`);
 
-        setUser(response.data);
-        
+        setStates(response.data);
+    }
+
+    function setStates(data) {
+        setId(data.id);
+        setName(data.name);
+        setEmail(data.email);
+        setPhone(data.phone);
+        setAddress(data.address);
     }
 
     async function handleSubmit(e) {
@@ -39,14 +39,13 @@ export default function User({ match, history }) {
 
         if(validateFields()) {
             
-            const response = await api.put(`/user/${user.id}`, {
+            await api.put(`/user/${id}`, {
                 name,
                 email,
                 phone,
                 address
             });
 
-            console.log(response.status);
             history.push('/users-list');
         }else {
             console.log('Empty Field');
@@ -67,10 +66,10 @@ export default function User({ match, history }) {
             <div className="update-container">
                 <div className="card">
                     <form onSubmit={handleSubmit}>
-                        <input type="text" placeholder="Name" name="name" onChange={e => setName(e.target.value)} value={user.name} />
-                        <input type="text" placeholder="Email" name="email" onChange={e => setEmail(e.target.value)} value={user.email} />
-                        <input type="text" placeholder="Phone" name="phone" onChange={e => setPhone(e.target.value)} value={user.phone} />
-                        <input type="text" placeholder="Address" name="address" onChange={e => setAddress(e.target.value)} value={user.address} />
+                        <input type="text" placeholder="Name" name="name" onChange={e => setName(e.target.value)} value={name} />
+                        <input type="text" placeholder="Email" name="email" onChange={e => setEmail(e.target.value)} value={email} />
+                        <input type="text" placeholder="Phone" name="phone" onChange={e => setPhone(e.target.value)} value={phone} />
+                        <input type="text" placeholder="Address" name="address" onChange={e => setAddress(e.target.value)} value={address} />
                         <button type="submit">Update</button>
                     </form>
                 </div>
